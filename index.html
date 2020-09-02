@@ -95,7 +95,15 @@
         const submitButton=document.getElementById('submitButton');
         submitButton.addEventListener('click',function(){ 
 
-            if(pinNumber == parseId(pushed)){
+            // document.getElementById('redSign').style.display='block';
+
+            const pinCode=document.getElementById('displayPlate').value;
+            console.log(pinCode);
+
+            const boxCode=document.getElementById('inputLabel').value;
+            console.log(boxCode)
+
+            if(pinCode == parseInt(boxCode)){
                 const correct = document.getElementById('greenSign');
                 correct.style.display='block';
             }   
