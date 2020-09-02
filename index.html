@@ -59,21 +59,24 @@
         key.addEventListener('click',function(){
             let numberDigit= Math.random()*10000;
             let pinNumber=parseInt(numberDigit);
+
             // let pinLength=(''+pinNumber).length;
             // if(pinLength==1){
-            //     const pinNumber='000'+'pinNumber';
+            //     const pinNumber='000'+pinNumber.toString();
             // }
             // else if(pinLength==2){
-            //     const pinNumber='00'+'pinNumber';
+            //     const pinNumber='00'+pinNumber.toString();
             // }
             // else if(pinLength==3){
-            //     const pinNumber='0'+'pinNumber';
+            //     const pinNumber='0'+pinNumber.toString();
             // }
             // else{
-            //     const pinNumber='pinNumber';
+            //     const pinNumber=pinNumber.toString();
             // }
-    
-            const display=document.getElementById('displayPlate').value
+
+            // const codeNumber=parseInt(pinNumber);
+
+            const display=document.getElementById('displayPlate').value;
             document.getElementById('displayPlate').value=pinNumber;
         })
 
@@ -91,11 +94,17 @@
             document.getElementById('inputLabel').value='';
         }
 
+        function deleteBtn(){
+            const screenNumber=document.getElementById('inputLabel');
+            const backSpaceValue=screenNumber.value;
+            const deleteValue=backSpaceValue.slice(0,-1);
+            document.getElementById('inputLabel').value=deleteValue;
+
+
+        }
 
         const submitButton=document.getElementById('submitButton');
         submitButton.addEventListener('click',function(){ 
-
-            // document.getElementById('redSign').style.display='block';
 
             const pinCode=document.getElementById('displayPlate').value;
             console.log(pinCode);
